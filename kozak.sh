@@ -2,7 +2,9 @@
 # 计算kozak规则
 
 cp /home/rice_all.cdna .
-cat rice_all.cdna | tr -d [[:space:]] | sed "s/>/\n>/g" >sativa_cDNA.fasta
+# 去除所有的空格和换行符
+cat rice_all.cdna | tr -d [[:space:]] | sed "s/>/\n>/g" >sativa_cDNA.fasta 
+
 
 declare -i kozak=1 sum=1
 declare -i p2
