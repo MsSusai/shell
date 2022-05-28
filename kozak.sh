@@ -14,10 +14,10 @@ for line in $(cat sativa_cDNA.fasta); do
 
     if [[ ${line:p2-3:7} =~ [AG]..ATGG ]]; then # 在line从p2-3位置处向后取七个碱基
         echo "$kozak/$sum $p2   ${line:p2-3:7}  kozak found!"
-        ((p++))
+        ((kozak++))
     fi
     ((sum++))
 done
 
-echo "Total Kozak: $p"
+echo "Total Kozak: $kozak"
 echo "Total Genes: $sum"
