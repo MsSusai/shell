@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 declare n=5
 
 echo "Hello World!"
