@@ -9,11 +9,11 @@ fastqc -o ./fastqc_results -f fastq SRR10987231 fastq SRR10987231
 
 # 建立索引
 # 转录组cDNA不用注释文件。如果用基因组要连着gtf注释文件一起输入(-gtf '注释文件.gtf')，否则会出现索引只能建立到染色体，不能建立到具体的基因上！！！
-rsem-prepare-reference -p 6 --bowtie2 GCF_000001735.4_TAIR10.1_genomic.fna ./reference/ref_rsem
+rsem-prepare-reference -p 6 --bowtie2 GCF_000001735.4_TAIR10.1_rna.fna ./reference/ref_rsem
 
 # mapping
-rsem-calculate-expression -p 6 --bowtie2 --estimate-rspd SRR10987231.1.fastq ./reference/ref_rsem ./mapping/SRR1.map
-rsem-calculate-expression -p 6 --bowtie2 --estimate-rspd SRR10987232.1.fastq ./reference/ref_rsem ./mapping/SRR2.map
+rsem-calculate-expression -p 10 --bowtie2 --estimate-rspd SRR10987231.1.fastq ./reference/ref_rsem ./mapping/SRR1.map
+rsem-calculate-expression -p 10 --bowtie2 --estimate-rspd SRR10987232.1.fastq ./reference/ref_rsem ./mapping/SRR2.map
 
 # 查看alignment质量
 rsem-plot-model SRR1.map SRR1_diagnostic.pdf
